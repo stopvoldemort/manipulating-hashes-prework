@@ -1,3 +1,5 @@
+require 'pry'
+
 def second_challenge
   groceries = {
    dairy: ["milk", "yogurt", "cheese"],
@@ -6,8 +8,13 @@ def second_challenge
    grains: ["rice", "pasta"]
   }
 
-  #code your solution here!
-
-  
-
+  flat_list = []
+  groceries.each do |category, items|
+    if items.is_a?(Array)
+      items.each do |item|
+        flat_list << item
+      end
+    end
+  end
+  flat_list
 end
